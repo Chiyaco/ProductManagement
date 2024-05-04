@@ -1,0 +1,28 @@
+version: '3.4'
+
+networks:
+  demoappnetwork:
+
+services:
+ mssql-container:
+   image: mcr.microsoft.com/mssql/server:latest
+   container_name: mssql-container
+   environment: 
+       - ACCEPT_EULA=Y # Accept the End-User License Agreement
+       - SA_PASSWORD=Serheldan@1946 # SET the SA password
+   ports:
+     - "8002:1433"
+   networks:
+        - demoappnetwork
+ productmanagement.presentation:
+    container_name: WebApiContainer
+    image: ${DOCKER_REGISTRY-}productmanagementpresentation
+    ports:
+        - 8001:80
+    build:
+      context: .
+      dockerfile: ProductManagement.Presentation/Dockerfile
+    depends_on:
+        - mssql-container
+    networks:
+        - demoappnetwork
