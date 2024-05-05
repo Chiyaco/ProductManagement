@@ -7,7 +7,7 @@ using MediatR;
 
 namespace ProductManagement.Application.Models.Product.Query
 {
-    public class GetProductQuery : IRequest<List<Domain.Entities.Product>>
+    public class GetProductQuery : IRequest<List<ProductDto>>
     {
     }
 }

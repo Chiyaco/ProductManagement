@@ -6,6 +6,7 @@ namespace ProductManagement.Domain.Entities
 {
     public class Product : BaseEntity, IAuditEntity
     {
+        public Guid Id { get; set; }
 
         public string Category { get; set; }
 
