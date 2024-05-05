@@ -26,7 +26,7 @@ namespace ProductManagement.Infrastructure.Persistence
             return await _entities.Where(where).ToListAsync();
         }
 
-        public async Task<T> Get(Guid id)
+        public async Task<T> Get(int id)
         {
             return await _entities.SingleOrDefaultAsync(s => s.Id == id);
         }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ProductManagement.Application.Models;
+﻿using ProductManagement.Application.Models;
 using ProductManagement.Domain.Entities;
 
 namespace ProductManagement.Application.Mapping
@@ -19,7 +14,7 @@ namespace ProductManagement.Application.Mapping
                 {
                     Id = product.Id,
                     Description = product.Description,
-                    Category = product.Category,
+                    CategoryId = product.CategoryId,
                     Price = product.Price,
                     Name = product.Name
                 };

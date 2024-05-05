@@ -71,5 +71,7 @@ namespace ProductManagement.Infrastructure.Persistence
 
         public DbSet<Product> Products { get; set; }
 
+        public DbSet<CategoryType> CategoryTypes { get; set; }
+
     }
 }

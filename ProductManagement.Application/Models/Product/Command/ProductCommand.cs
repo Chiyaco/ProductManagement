@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using ProductManagement.Domain.Enums;
 
 namespace ProductManagement.Application.Models.Product.Command
 {
@@ -6,7 +7,7 @@ namespace ProductManagement.Application.Models.Product.Command
     {
         public string Name { get; set; }
 
-        public string Category { get; set; }
+        public int CategoryId { get; set; }
 
         public decimal Price { get; set; }
 

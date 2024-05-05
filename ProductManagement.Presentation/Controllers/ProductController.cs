@@ -9,7 +9,7 @@ namespace ProductManagement.Presentation.Controllers
     [ApiController]
     public class ProductController : BaseController
     {
-        
+
         [HttpGet("getProducts")]
         public async Task<ActionResult<List<ProductDto>>> GetProducts()
         {
@@ -18,7 +18,7 @@ namespace ProductManagement.Presentation.Controllers
         }
 
         [HttpPost("insertProducts")]
-        public async Task Create([FromBody]ProductCreate command)
+        public async Task Create([FromBody] ProductCreate command)
             => await Mediator.Send(command);
 
         [HttpPut("updateProduct")]
@@ -26,12 +26,12 @@ namespace ProductManagement.Presentation.Controllers
             => await Mediator.Send(command);
 
         [HttpDelete("deleteProduct/{id}")]
-        public async Task Delete( string id)
+        public async Task Delete(int id)
         {
-            var deleteRequest = new ProductDelete { Id = Guid.Parse(id) };
+            var deleteRequest = new ProductDelete { Id = id };
             await Mediator.Send(deleteRequest);
         }
-            
+
 
 
     }

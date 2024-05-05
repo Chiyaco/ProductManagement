@@ -16,6 +16,7 @@ namespace ProductManagement.Infrastructure.Persistence.Configuration
             builder.Property(p => p.Price).IsRequired();
 
             builder.Property(p => p.Category).IsRequired();
+            builder.Ignore(p => p.Category);
         }
     }
 }

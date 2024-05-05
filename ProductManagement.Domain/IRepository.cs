@@ -9,7 +9,7 @@ namespace ProductManagement.Domain
 
         Task<IEnumerable<T>> GetAll(Expression<Func<T, bool>> where);
 
-        Task<T> Get(Guid id);
+        Task<T> Get(int id);
 
         Task Insert(T entity);
 

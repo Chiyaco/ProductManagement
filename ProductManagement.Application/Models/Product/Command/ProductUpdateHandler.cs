@@ -22,7 +22,7 @@ namespace ProductManagement.Application.Models.Product.Command
             existedProduct.Name = request.Name;
             existedProduct.Price = request.Price;
             existedProduct.Description = request.Description;
-            existedProduct.Category = request.Category;
+            existedProduct.CategoryId = request.CategoryId;
 
             await _productRepository.Update(existedProduct);
 
